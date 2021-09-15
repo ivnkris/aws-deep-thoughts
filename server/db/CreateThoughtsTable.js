@@ -22,3 +22,17 @@ const params = {
     WriteCapacityUnits: 10,
   },
 };
+
+dynamodb.createTable(params, (err, data) => {
+  if (err) {
+    console.error(
+      "Unable to create table. Error: ",
+      JSON.stringify(err, null, 2)
+    );
+  } else {
+    console.log(
+      "Created table. Table description: ",
+      JSON.stringify(data, null, 2)
+    );
+  }
+});
